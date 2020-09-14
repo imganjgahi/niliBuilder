@@ -3,7 +3,11 @@ import React from 'react';
 const EditorPanel = (props) => {
     return ( 
         <div className="editorPanel">
-            EditorPanel
+            <div className="panelHeader">
+                <span>Panel</span>
+                <span onClick={props.onClose}>X</span>
+            </div>
+            {JSON.stringify(props.el.style)}
         </div>
      );
 }
