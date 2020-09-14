@@ -15,12 +15,17 @@ const Temp = (props) => {
     }
 
     function selectedElementHandler(el) {
-        console.log(el)
+        setTargetElement(el);
+        setPanelStatus(true);
     }
     return ( 
         <>
-        <RenderEngin template={TEMPLATES.filter(x => x.id === tempId)[0]} onSelectElement={(element) => selectedElementHandler(element)} />
-        {showPanel && targetElement && <EditorPanel onClose={closePanel} /> }
+        <RenderEngin 
+        template={TEMPLATES.filter(x => x.id === tempId)[0]} 
+        onSelectElement={selectedElementHandler} />
+        {showPanel && targetElement && <EditorPanel 
+        onClose={closePanel} 
+        el={targetElement} /> }
         </>
      );
 }
