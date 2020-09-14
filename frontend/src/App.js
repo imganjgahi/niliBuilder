@@ -7,6 +7,8 @@ import {
 } from "react-router-dom";
 import Home from './Pages/Home';
 import About from './Pages/Aboute';
+import Templates from './Pages/Templates';
+import Temp from './Pages/Temp';
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
 
       <Router>
         <Switch>
+          <Route path="/temp/:tempId" component={Temp} />
+          <Route path="/Templates" component={Templates} />
           <Route path="/about" component={About} />
           <Route exact path="/">
             <Home />
