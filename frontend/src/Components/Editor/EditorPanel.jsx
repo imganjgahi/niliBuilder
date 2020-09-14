@@ -2,13 +2,14 @@ import React from 'react';
 import { useDragging } from '../Utils/Dragable';
 
 const EditorPanel = (props) => {
-    const [ref, x, y, isDragging] = useDragging();
+    const [ref, x, y, isDragging] = useDragging(450, 150);
     return ( 
         <div className="editorPanel"
         ref={ref}
         style={{
             left: x,
-            top: y
+            top: y,
+            opacity: isDragging ? 0.6 : 1
         }}
         >
             <div className="panelHeader">

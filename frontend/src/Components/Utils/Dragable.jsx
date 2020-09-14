@@ -1,8 +1,8 @@
 
 import React, { useState, useEffect, useRef } from 'react';
-export function useDragging() {
+export function useDragging(xPos, yPos) {
     const [isDragging, setIsDragging] = useState(false);
-    const [pos, setPos] = useState({ x: 20, y: 20 });
+    const [pos, setPos] = useState({ x: xPos, y: yPos });
     const ref = useRef(null);
   
     function onMouseMove(e) {
