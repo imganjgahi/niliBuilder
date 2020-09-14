@@ -12,7 +12,7 @@ const EditorPanel = (props) => {
             opacity: isDragging ? 0.6 : 1
         }}
         >
-            <div className="panelHeader">
+            <div className="panelHeader dragable">
                 <span>Panel</span>
                 <span onClick={props.onClose}>X</span>
             </div>

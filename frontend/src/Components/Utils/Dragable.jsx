@@ -23,6 +23,7 @@ export function useDragging(xPos, yPos) {
   
     function onMouseDown(e) {
       if (e.button !== 0) return;
+      if(!e.target.className.includes("dragable")) return;
       setIsDragging(true);
   
       setPos({
