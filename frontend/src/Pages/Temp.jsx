@@ -15,6 +15,7 @@ const Temp = (props) => {
     }
 
     function selectedElementHandler(el) {
+        if(showPanel) return;
         setTargetElement(el);
         setPanelStatus(true);
     }
