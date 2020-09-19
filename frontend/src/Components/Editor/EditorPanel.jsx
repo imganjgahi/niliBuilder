@@ -17,7 +17,7 @@ const EditorPanel = (props) => {
                 <span>Panel</span>
                 <span onClick={props.onClose}>X</span>
             </div>
-            <StylePanel elStyle={props.el.style} />
+            <StylePanel elStyle={props.el.style} onChange= {(value)=> props.onStyleChange(value)}/>
         </div>
      );
 }
