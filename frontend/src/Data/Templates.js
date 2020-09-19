@@ -2,6 +2,7 @@ export const TEMPLATES = [
     {
         id: "1",
         title: "Temp 1",
+        type: "div",
         children: [
             {
                 type: "div",
