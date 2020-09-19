@@ -1,10 +1,15 @@
 import React from 'react';
 
 const RenderEngin = (props) => {
-
-    console.log("TEMP: ", props.template);
     function getElemnt(el, index = "0") {
         switch(el.type) {
+            case "div":
+                return <div key={index} {...el} onClick={(e) => {
+                    e.stopPropagation()
+                    props.onSelectElement(el)
+                }}>
+                    {el.children?.map((x, i )=> getElemnt(x, i))}
+                </div>;
             case "h1":
                 return <h1 key={index} {...el} onClick={(e) => {
                     e.stopPropagation()
@@ -21,12 +26,7 @@ const RenderEngin = (props) => {
                 </p>;
 
             default:
-            return <div key={index} {...el} onClick={(e) => {
-                e.stopPropagation()
-                props.onSelectElement(el)
-            }}>
-                {el.children?.map((x, i )=> getElemnt(x, i))}
-            </div>
+                return null
         }
     }
     if(!props.template) {
