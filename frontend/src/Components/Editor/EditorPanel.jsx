@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDragging } from '../Utils/Dragable';
+import StylePanel from './Tools/StylePanel';
 
 const EditorPanel = (props) => {
     const [ref, x, y, isDragging] = useDragging(450, 150);
@@ -16,7 +17,7 @@ const EditorPanel = (props) => {
                 <span>Panel</span>
                 <span onClick={props.onClose}>X</span>
             </div>
-            {JSON.stringify(props.el.style)}
+            <StylePanel elStyle={props.el.style} />
         </div>
      );
 }
